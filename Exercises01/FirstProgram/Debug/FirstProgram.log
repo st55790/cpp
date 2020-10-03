@@ -1,0 +1,3 @@
+﻿  Triangle.cpp
+D:\SkolaPosledniRok\CPP\cpp\Exercises01\FirstProgram\Triangle.cpp(25,19): warning C4244: inicializování: double se převádí na int; může dojít ke ztrátě dat.
+  FirstProgram.vcxproj -> D:\SkolaPosledniRok\CPP\cpp\Exercises01\Debug\FirstProgram.exe

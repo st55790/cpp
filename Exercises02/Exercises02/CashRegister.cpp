@@ -54,7 +54,7 @@ double CashRegister::GetSumOfAllReceipt() const
 {
 	double tmpSum = 0;
 	for (int i = 0; i < 10; i++) {
-		tmpSum += arrayOfReceipt[i]->GetSum();
+		tmpSum += arrayOfReceipt[1000+i]->GetSum();
 	}
 	return tmpSum;
 }

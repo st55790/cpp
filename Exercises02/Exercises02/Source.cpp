@@ -20,15 +20,8 @@ int main(int argc, char** argv) {
 	cashRegister.CreateReceipt(80, 21);
 	cashRegister.CreateReceipt(190, 21);
 	cashRegister.CreateReceipt(1163, 21);
-	cashRegister.CreateReceipt(1163, 21);
-	cashRegister.CreateReceipt(1163, 21);
-	cashRegister.CreateReceipt(1163, 21);
-	cashRegister.CreateReceipt(1163, 21);
-	cashRegister.CreateReceipt(1163, 21);
-	cashRegister.CreateReceipt(1163, 21);
-	cashRegister.CreateReceipt(1163, 21);
-	cashRegister.CreateReceipt(1163, 21);
-	// << cashRegister.GetSumOfAllReceipt();
+
+	cout << cashRegister.GetSumOfAllReceipt();
 
 	return 0;
 }

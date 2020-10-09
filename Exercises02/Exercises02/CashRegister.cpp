@@ -21,40 +21,32 @@ CashRegister::~CashRegister()
 Receipt& CashRegister::CreateReceipt(double cost, double vat)
 {
 	if (numReceipt < 10) {
-		//Vytvor a pridej uctenku
 		arrayOfReceipt[numReceipt] = new Receipt;
 		arrayOfReceipt[numReceipt]->SetId(idCounter++);
 		arrayOfReceipt[numReceipt]->SetSum(cost);
 		arrayOfReceipt[numReceipt]->SetVat(vat);
-		cout << numReceipt << ". uctenka byla uspesne pridana a vytvorena\n";
 		return *arrayOfReceipt[numReceipt++];
 	}
 	else {
-		throw new std::exception("CashRegister is full!");
+		throw exception("CashRegister is full!");
 	}
-	// - if pocet vytvorenych uctenek = 10, vyhod chybovou hlasku nebo udelat list 
-	//
-	//if (receiptCounter == 10)
-	//	throw new std::exception("CashRegister is full.");
-	//receipts[receiptCounter].SetId(receiptCounter + 1);
-
-	// - Nastaveni uctenky (vytvoreni instance?) - id, cost, dph
-	// - inkrementace poctu uctenek idCounter
-	// - vratit danou uctenku
-	// receipts[receiptsCounter++];
-	
 }
 
 Receipt& CashRegister::GetReceipt(int id)
 {
-	return *arrayOfReceipt[id];
+	for (int i = 0; i < numReceipt; i++) {
+		if (arrayOfReceipt[i]->GetId() == id) {
+			return *arrayOfReceipt[i];
+		}
+	}
+	return *arrayOfReceipt[0];
 }
 
 double CashRegister::GetSumOfAllReceipt() const
 {
 	double tmpSum = 0;
-	for (int i = 0; i < 10; i++) {
-		tmpSum += arrayOfReceipt[1000+i]->GetSum();
+	for (int i = 0; i < numReceipt; i++) {
+		tmpSum += arrayOfReceipt[i]->GetSum();
 	}
 	return tmpSum;
 }
@@ -62,8 +54,9 @@ double CashRegister::GetSumOfAllReceipt() const
 double CashRegister::GetSumOfAllReceiptWithVat() const
 {
 	double tmpSum = 0;
-	for (int i = 0; i < 10; i++) {
-		tmpSum += arrayOfReceipt[i]->GetSum() * arrayOfReceipt[i]->GetVat();
+	for (int i = 0; i < numReceipt; i++) {
+		tmpSum += arrayOfReceipt[i]->GetSum() * (arrayOfReceipt[i]->GetVat()/100+1);
 	}
 	return tmpSum;
 }
+

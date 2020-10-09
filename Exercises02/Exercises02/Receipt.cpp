@@ -15,7 +15,7 @@ void Receipt::SetSum(double sum)
 	this->sum = sum;
 }
 
-double Receipt::GetSum()
+double Receipt::GetSum() const
 {
 	return sum;
 }
@@ -25,7 +25,7 @@ void Receipt::SetVat(double vat)
 	this->vat = vat;
 }
 
-double Receipt::GetVat()
+double Receipt::GetVat() const
 {
 	return vat;
 }

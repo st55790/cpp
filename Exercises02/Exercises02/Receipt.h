@@ -13,10 +13,10 @@ public:
 	int GetId() const;
 	
 	void SetSum(double sum);
-	double GetSum();
+	double GetSum() const;
 
 	void SetVat(double vat);
-	double GetVat();
+	double GetVat() const;
 
 };
 

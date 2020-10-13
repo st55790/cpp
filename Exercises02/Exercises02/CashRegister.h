@@ -16,7 +16,7 @@ public:
 
 private:
 	int numReceipt;
-	Receipt** arrayOfReceipt;
+	Receipt* arrayOfReceipt;
 	static int idCounter;
 };
 #endif // !CASH_REGISTER_H

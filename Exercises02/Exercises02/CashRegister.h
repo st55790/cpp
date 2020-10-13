@@ -4,9 +4,7 @@
 
 #include "Receipt.h"
 
-class CashRegister {
-
-	static int idCounter;
+class CashRegister {	
 
 public:
 	CashRegister();
@@ -18,6 +16,8 @@ public:
 
 private:
 	int numReceipt;
+	Receipt** arrayOfReceipt;
+	static int idCounter;
 };
 #endif // !CASH_REGISTER_H
 

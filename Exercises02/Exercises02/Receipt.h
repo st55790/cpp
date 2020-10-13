@@ -7,6 +7,7 @@ private:
 	int id;
 	double sum;
 	double vat; //DPH
+	
 
 public:
 	void SetId(int id);

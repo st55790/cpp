@@ -1,15 +1,14 @@
 #include "CashRegister.h"
 #include <exception>
 #include <iostream>
-
+#define MAX_UCTENEK 10
 using namespace std;
 
 int CashRegister::idCounter = 1000;
-Receipt** arrayOfReceipt;
 
 CashRegister::CashRegister()
 {
-	arrayOfReceipt = new Receipt*[10];
+	arrayOfReceipt = new Receipt*[MAX_UCTENEK];
 	numReceipt = 0;
 }
 
@@ -20,7 +19,7 @@ CashRegister::~CashRegister()
 
 Receipt& CashRegister::CreateReceipt(double cost, double vat)
 {
-	if (numReceipt < 10) {
+	if (numReceipt < MAX_UCTENEK) {
 		arrayOfReceipt[numReceipt] = new Receipt;
 		arrayOfReceipt[numReceipt]->SetId(idCounter++);
 		arrayOfReceipt[numReceipt]->SetSum(cost);

@@ -14,8 +14,8 @@ int main(int argc, char** argv) {
 	cashRegister.CreateReceipt(8, 19);
 	cashRegister.CreateReceipt(90, 19);
 
-	cout << "\nTržba bez dph ->" << cashRegister.GetSumOfAllReceipt();
-	cout << "\nTržba s dph ->" << cashRegister.GetSumOfAllReceiptWithVat();
+	cout << "Trzba bez dph ->" << cashRegister.GetSumOfAllReceipt();
+	cout << "\nTrzba s dph ->" << cashRegister.GetSumOfAllReceiptWithVat();
 	cout << "\n" << cashRegister.GetReceipt(1001).GetSum() << ",-Kc = 2. uctenka cena bez DPH";
 	cout << "\n" << cashRegister.GetReceipt(1001).GetSum() * ((cashRegister.GetReceipt(1001).GetVat()/100)+1) << ",-Kc = 2. uctenka cena s DPH";
 

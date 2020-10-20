@@ -14,10 +14,10 @@ private:
 public:
 	Game();
 	~Game();
-	void AddObject(Object* object); //Vloží objekt do pole.
-	int* FindIdOfStaticObjects(double xmin, double xmax, double ymin, double ymax); //Vrátí pole id všech statických objektù v zadaných souøadnicích.
-	MovingObject** FindMovingObjectInArea(double x, double y, double r); //Vrátí pole ukazelù na pohyblivé objekty v kruhové oblasti (S=[x,y],radius = r).
-	MovingObject** FindMovingObjectInArea(double x, double y, double r, double umin, double umax); //Viz pøedchozí, navíc kontrola úhlu natoèení.
+	void AddObject(Object* object);
+	int* FindIdOfStaticObjects(double xmin, double xmax, double ymin, double ymax);
+	MovingObject** FindMovingObjectInArea(double x, double y, double r);
+	MovingObject** FindMovingObjectInArea(double x, double y, double r, double umin, double umax); 
 };
 
 #endif // !GAME_H

@@ -9,6 +9,6 @@ private:
 public:
 	MovingObject(int id, double angleOfRotation);
 	void SetAngleOfRotation(double angle);
-	double GetAngleOfRotation() const; //od:0 – do:2*π, 0 – sever, π/2 - vychod, π - jih, 3π/2 - zapad
+	double GetAngleOfRotation() const;
 };
 #endif // !MOVING_OBJECT_H

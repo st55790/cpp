@@ -1,8 +1,6 @@
 ﻿#include "Game.h"
 #include <iostream>
 #include "StaticObject.h"
-#include <typeinfo>
-#include <string>
 #include "Object.h"
 using namespace std;
 
@@ -24,23 +22,32 @@ int main() {
 	game->AddObject(mo2);
 	
 	cout << "ID Statick objects\n";
-	int* arrayIdStaticObjects = game->FindIdOfStaticObjects(-1,1,-1,1);
-	for (int i = 0; i <= sizeof(arrayIdStaticObjects)/sizeof(*arrayIdStaticObjects); i++) {
-		cout << i << ". prvek ma id->" << arrayIdStaticObjects[i] << "\n";
+	int* soArray = game->FindIdOfStaticObjects(-1,1,-1,1);
+	for (int i = 0; i <= 2; i++) {
+		cout << i+1 << ". prvek ma id->" << soArray[i] << "\n";
 	}
 
 	cout << "\nID Moving objects in area -1,-1,5\n";
 	MovingObject** moArray = game->FindMovingObjectInArea(-1, -1, 5);
 	for (int i = 0; i < 2; i++) {
-		cout << i << ". prvek ma id->" << moArray[i]->GetId() << "\n";
+		cout << i+1 << ". prvek ma id->" << moArray[i]->GetId() << "\n";
 	}
 
 	cout << "\nID Moving object in area -1,-1,5,61,270\n";
 	moArray = game->FindMovingObjectInArea(-1, -1, 5,61,270);
 	for (int i = 0; i < 1; i++) {
-		cout << i << ". prvek ma id->" << moArray[i]->GetId() << "\n";
+		cout << i+1 << ". prvek ma id->" << moArray[i]->GetId() << "\n";
 	}
-	game->~Game();
+
 	delete obj1;
+	delete obj2;
+	delete so1;
+	delete so2;
+	delete mo1;
+	delete mo2;
+	delete[] soArray;
+	delete[] moArray;
+	game->~Game();
+
 	return 0;
 }

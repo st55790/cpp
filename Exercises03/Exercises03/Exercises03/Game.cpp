@@ -16,6 +16,7 @@ Game::~Game()
 
 void Game::AddObject(Object* object)
 {
+    //if(object == nullptr){throw std::exception("NullPointerExcepiton");}
     if(objectsCounter < SIZE){
         objectsArray[objectsCounter++] = object;
     }else{

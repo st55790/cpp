@@ -5,8 +5,10 @@
 #include "IObject.h"
 
 using namespace std;
-class IComparable : public IObject{
+class IComparable : virtual public IObject{
 public:
+	IComparable();
+	virtual ~IComparable();
 	virtual int CompareTo(IComparable* obj) const = 0;
 };
 #endif // !I_COMPARABLE.H

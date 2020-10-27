@@ -1,6 +1,17 @@
 #include "Time.h"
 
 
+Time::Time()
+{
+	this->_Hours = 0;
+	this->_Minutes = 0;
+	this->_Seconds = 0;
+}
+
+Time::~Time()
+{
+}
+
 Time::Time(int hours, int minutes, int seconds)
 {
 	this->_Hours = hours;

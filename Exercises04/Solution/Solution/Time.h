@@ -2,13 +2,15 @@
 #ifndef TIME_H
 #define TIME_H
 #include "IComparable.h"
-class Time : public IComparable{
+class Time :  public IComparable{
 
 private:
-	int _Hours; //0-23
-	int _Minutes; //0-59
-	int _Seconds; //0-59
+	int _Hours;
+	int _Minutes;
+	int _Seconds; 
 public:
+	Time();
+	~Time();
 	Time(int hours, int minutes, int seconds);
 	int CompareTo(IComparable* obj) const override; 
 	string ToString() const override; 

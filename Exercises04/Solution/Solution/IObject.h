@@ -9,6 +9,7 @@ using namespace std;
 class IObject {
 private:
 public:
+	virtual ~IObject();
 	virtual string ToString() const = 0;
 };
 #endif // !I_OBJECT.H

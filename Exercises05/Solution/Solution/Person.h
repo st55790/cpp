@@ -1,5 +1,6 @@
 #pragma once
 #ifndef PERSON_H
+#define PERSON_H
 #include <string>
 
 namespace Entity {

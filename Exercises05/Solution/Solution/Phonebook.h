@@ -1,7 +1,8 @@
 #pragma once
 #ifndef PHONEBOOK_H
-#include "Person.h"
+#define PHONEBOOK_H
 #include <string>
+#include "Person.h"
 
 namespace Model {
 	class Phonebook
@@ -15,9 +16,7 @@ namespace Model {
 			Node(Entity::Person p) : data(p), next(nullptr) {};
 			~Node() {};
 		};
-		Node GetFirstNode() const {
-			return *first;
-		};
+
 		Phonebook();
 		~Phonebook();
 		void AddPerson(Entity::Person p);

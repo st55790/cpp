@@ -9,15 +9,12 @@ Model::Phonebook::Phonebook()
 
 Model::Phonebook::~Phonebook()
 {
-	if (first != nullptr) {
-		Node* actual = first;
-		while (actual != nullptr) {
-			Node* tmp = actual->next;
-			delete actual;
-			actual = tmp;
-		}
+	Node* actual = first;
+	while (actual != nullptr) {
+		Node* tmp = actual->next;
+		delete actual;
+		actual = tmp;
 	}
-	
 }
 
 void Model::Phonebook::AddPerson(Entity::Person p)
@@ -43,7 +40,6 @@ std::string Model::Phonebook::FindPhone(std::string name) const
 	while (actual != nullptr) {
 		if (actual->data.GetName() == name) {
 			return actual->data.GetPhone();
-			break;
 		}
 		actual = actual->next;
 	}
@@ -59,7 +55,6 @@ std::string Model::Phonebook::FindPhone(int id) const
 	while (actual != nullptr) {
 		if (actual->data.GetId() == id) {
 			return actual->data.GetPhone();
-			break;
 		}
 		actual = actual->next;
 	}

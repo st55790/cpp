@@ -53,6 +53,8 @@ int main() {
 		cout << e.what() << endl;
 	}
 
+	delete list;
+
 	return 0;
 }
 

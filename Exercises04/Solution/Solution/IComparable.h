@@ -5,7 +5,7 @@
 #include "IObject.h"
 
 using namespace std;
-class IComparable : virtual public IObject{
+class IComparable{
 public:
 	IComparable();
 	virtual ~IComparable();

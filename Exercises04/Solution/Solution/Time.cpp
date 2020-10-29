@@ -21,6 +21,7 @@ Time::Time(int hours, int minutes, int seconds)
 
 int Time::CompareTo(IComparable* obj) const
 {
+	//testovat nullptr
 	Time* tmpTime = dynamic_cast<Time*>(obj);
 	if (_Hours > tmpTime->_Hours) {
 		return 1;

@@ -7,9 +7,21 @@
 namespace Model {
 	class Phonebook
 	{
+
 	public:
+
+		Phonebook();
+		~Phonebook();
+		void AddPerson(Entity::Person p);
+		std::string FindPhone(std::string name)const;
+		std::string FindPhone(int id)const;
+		void PrintPhoneBook() const;
+
+	private:
+
 		class Node {
 
+			//Toto pod do spodni casti
 		public:
 			Node* next;
 			Entity::Person data;
@@ -17,14 +29,6 @@ namespace Model {
 			~Node() {};
 		};
 
-		Phonebook();
-		~Phonebook();
-		void AddPerson(Entity::Person p);
-		std::string FindPhone(std::string name)const;
-		std::string FindPhone(int id)const;
-		void PrintPhoneBook();
-
-	private:
 		Node* first;
 	};
 }

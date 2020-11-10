@@ -34,7 +34,7 @@ void Model::Phonebook::AddPerson(Entity::Person p)
 std::string Model::Phonebook::FindPhone(std::string name) const
 {
 	if (name.empty()) {
-		throw std::invalid_argument("Invalid argument!");
+		throw std::invalid_argument("Name was empty!");
 	}
 	Node* actual = first;
 	while (actual != nullptr) {
@@ -49,7 +49,7 @@ std::string Model::Phonebook::FindPhone(std::string name) const
 std::string Model::Phonebook::FindPhone(int id) const
 {
 	if (id < 0) {
-		throw std::invalid_argument("Invalid argument!");
+		throw std::invalid_argument("ID was empty!");
 	}
 	Node* actual = first;
 	while (actual != nullptr) {
@@ -61,7 +61,7 @@ std::string Model::Phonebook::FindPhone(int id) const
 	throw std::invalid_argument("ID wasnt found in phonebook!");
 }
 
-void Model::Phonebook::PrintPhoneBook()
+void Model::Phonebook::PrintPhoneBook() const
 {
 	Node* actual = first;
 	while (actual != nullptr) {

@@ -16,7 +16,5 @@ private:
 	std::string lastname;
 	Address address;
 	Date dateOfBirthday;
-	Person* father;
-	Person* mother;
 };
 #endif // !PERSON_H

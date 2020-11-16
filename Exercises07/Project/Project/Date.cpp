@@ -1,4 +1,5 @@
 #include "Date.h"
+#include <iostream>
 
 
 Date::Date()
@@ -17,6 +18,7 @@ Date::Date(int day, int month, int year)
 
 Date::~Date()
 {
+    std::cout << "Destuctor date" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Date& date)

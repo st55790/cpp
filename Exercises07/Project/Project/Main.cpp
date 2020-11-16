@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "Date.h"
 #include "Address.h"
 #include "Person.h"
@@ -11,12 +12,17 @@
 void Save();
 void Load();
 
+
+
 int main() {
+
+
 
 	Save();
 	Load();
 
 	//Memory LEAK Check start
+	_CrtCheckMemory();
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE);
 	_CrtSetReportFile(_CRT_WARN, _CRTDBG_FILE_STDOUT);
 	_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_FILE);
@@ -24,6 +30,7 @@ int main() {
 	_CrtSetReportMode(_CRT_ASSERT, _CRTDBG_MODE_FILE);
 	_CrtSetReportFile(_CRT_ASSERT, _CRTDBG_FILE_STDOUT);
 	_CrtDumpMemoryLeaks();
+
 	//Memory Leak Check end
 
 	return 0;
@@ -63,9 +70,12 @@ void Load()
 	for (int i = 0; i < countObject; i++) {
 		readFile.read((char*)&p[i], sizeof(Person));
 	}
+
 	readFile.close();
 
 	for (int i = 0; i < countObject; i++) {
 		std::cout << p[i] << std::endl;
 	}
+
+	delete[] p;
 }

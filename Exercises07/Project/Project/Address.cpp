@@ -1,5 +1,6 @@
 #include "Address.h"
 #include <string>
+#include <iostream>
 
 
 Address::Address()
@@ -18,6 +19,7 @@ Address::Address(std::string street, std::string city, int postCode)
 
 Address::~Address()
 {
+    std::cout << "Destuctor address" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Address& adr)

@@ -77,5 +77,5 @@ void Load()
 		std::cout << p[i] << std::endl;
 	}
 
-	delete[] p;
+	//delete[] p;
 }

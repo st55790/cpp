@@ -1,12 +1,11 @@
 #include "Address.h"
-#include <string>
-#include <iostream>
+
 
 
 Address::Address()
 {
-    this->street = "null";
-    this->city = "null";
+    this->street = ' ';
+    this->city = ' ';
     this->postCode = 0;
 }
 
@@ -19,12 +18,11 @@ Address::Address(std::string street, std::string city, int postCode)
 
 Address::~Address()
 {
-    std::cout << "Destuctor address" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Address& adr)
 {
-    os << adr.street << ", " << adr.city << " " << adr.postCode;
+    os << adr.street << ", " << adr.city << ' ' << adr.postCode;
     return os;
 }
 

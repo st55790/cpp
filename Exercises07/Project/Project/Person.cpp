@@ -1,8 +1,9 @@
 #include "Person.h"
-#include <iostream>
 
 Person::Person()
 {
+    name = "name";
+    lastname = "lastname";
 }
 
 Person::Person(std::string name, std::string lastname, Address address, Date dateOfBirthday)
@@ -13,9 +14,9 @@ Person::Person(std::string name, std::string lastname, Address address, Date dat
     this->dateOfBirthday = dateOfBirthday;
 }
 
+
 Person::~Person()
 {
-    std::cout << "Destuctor person" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Person& person)

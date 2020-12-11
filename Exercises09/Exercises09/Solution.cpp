@@ -1,3 +1,7 @@
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
 #include <iostream>
 #include "Matrix.h"
 
@@ -19,6 +23,16 @@ int main() {
 	int tpole[] = { 85,225,236,292,819,866,499,1413,1496 };
 	t.SetFrom(tpole);
 	std::cout << "r==t ? " << (r.EaqulMatrix(t) ? "true" : "false") << std::endl;
+
+	//Memory LEAK Check start
+	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE);
+	_CrtSetReportFile(_CRT_WARN, _CRTDBG_FILE_STDOUT);
+	_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_FILE);
+	_CrtSetReportFile(_CRT_ERROR, _CRTDBG_FILE_STDOUT);
+	_CrtSetReportMode(_CRT_ASSERT, _CRTDBG_MODE_FILE);
+	_CrtSetReportFile(_CRT_ASSERT, _CRTDBG_FILE_STDOUT);
+	_CrtDumpMemoryLeaks();
+	//Memory Leak Check end
 
 	return 0;
 }

@@ -15,14 +15,6 @@ Address::Address(std::string street, std::string city, int postCode) {
 
 Address::~Address() {}
 
-std::string Address::getStreet() {
-	return street;
-}
-
-std::string Address::getCity() {
-	return city;
-}
-
 std::ostream& operator<<(std::ostream& os, const Address& address) {
 	return os << address.street << " " << address.city << " " << address.postCode;
 }
